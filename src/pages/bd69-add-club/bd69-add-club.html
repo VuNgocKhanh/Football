@@ -13,6 +13,16 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-row>
+    <ion-col class="avatar" col-5>
 
+    </ion-col>
+  </ion-row>
+  <form-input [name]="name" [placeholder]="placeholder" [value]="value" (onInput)="getValue($event)"></form-input>
+  <ion-row>
+    <ion-col col-4>
+      <button ion-button full (click)="createClub()">Create Club</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

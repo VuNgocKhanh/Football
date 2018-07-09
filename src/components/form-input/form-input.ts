@@ -29,7 +29,6 @@ export class FormInputComponent {
 
   ngAfterViewInit(){
     console.log(this.disabled);
-    
   }
 
   showInput(){
