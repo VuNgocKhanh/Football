@@ -1,0 +1,28 @@
+calendar {
+  $circle: 100px;
+  .circle {
+    height: $circle * 0.3;
+    width: $circle * 0.3;
+    background: map-get($map: $appColors, $key: yellow);
+    // opacity: .4;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .calendar-container {
+    width: 100%;
+    .day {
+      width: 14.2857143%;
+      text-align: center;
+      padding: .8rem .6rem;
+      color: map-get($map: $appColors, $key: lightgray);
+      white-space: nowrap;
+      &.black {
+        color: map-get($map: $appColors, $key: black);
+      }
+    }
+    .day-of-week {
+      display: flex;
+    }
+    .day-of-month {}
+  }
+}

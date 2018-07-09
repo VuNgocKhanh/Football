@@ -1,0 +1,14 @@
+<!-- Generated template for the CalendarComponent component -->
+<div>
+  <div class="calendar-container">
+    <div class="day-of-week">
+      <div class="day black bold" *ngFor="let dayinweek of daysInWeek"><span>{{dayinweek}}</span></div>
+    </div>
+    <div class="day-of-month row">
+      <div class="day a1-relative" *ngFor="let dayinmonth of daysInMonth" [class.black]="dayinmonth.dd <= today.getDate()" (click)="selectDate(dayinmonth)" tappable>
+        <span *ngIf="dayinmonth.dd > -1">{{dayinmonth.dd}}</span>
+        <div class="circle a1-content-center" *ngIf="dayinmonth.dd == dateSelected.dd"></div>
+      </div>
+    </div>
+  </div>
+</div>
