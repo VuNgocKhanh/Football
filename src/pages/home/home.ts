@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
-import { FbAccountKitController } from '../../fb-accountkit/fb-accountkit';
 
 
 
@@ -28,10 +27,12 @@ export class HomePage {
   }
 
   callAccKit(){
-    FbAccountKitController._getIntance().register((data)=>{
-      alert("dang nhap thanh cong");
-      console.log(data);
+    // FbAccountKitController._getIntance().register((data)=>{
+    //   alert("dang nhap thanh cong");
+    //   console.log(data);
       
-    });
+    // });
+    this.navCtrl.push("CreateLeagePage");
   }
+
 }

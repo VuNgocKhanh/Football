@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { SegmentComponent } from './segment/segment';
-import { IonicModule } from '../../node_modules/ionic-angular/umd';
+import { IonicModule } from 'ionic-angular';
+import { FormInputComponent } from './form-input/form-input';
 @NgModule({
-	declarations: [SegmentComponent],
+	declarations: [
+    FormInputComponent
+	],
 	imports: [
 		IonicModule
 	],
-	exports: [SegmentComponent]
+	exports: [
+    FormInputComponent
+	]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
