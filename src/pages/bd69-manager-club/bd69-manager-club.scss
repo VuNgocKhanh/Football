@@ -1,3 +1,20 @@
 page-bd69-manager-club {
+    .content-fix{
+        background: linear-gradient(to bottom, #254355, #102836);        
+    }
+    .btn-create{
+        background: linear-gradient(to right,  #246A2E, #213623);
+    }
+    .club-logo{
+        height: 4rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .club-item{
+        padding: 16px 0 8px 0;
+        margin: 0 10px 0 10px;
+        border-bottom: 1px solid #37A485;
 
+    }
 }

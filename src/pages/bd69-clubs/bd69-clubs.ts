@@ -19,12 +19,55 @@ export class Bd69ClubsPage {
   mClub = new Clubs();
 
   list: Array<any> = [
-    { id: "001", name: "nguyen van a", position: "Thủ môn", number: "1", type: 1 },
-    { id: "002", name: "nguyen van b", position: "Hậu vệ", number: "3", type: 0 },
-    { id: "003", name: "nguyen van c", position: "Tiền đạo", number: "7", type: 0 },
-    { id: "004", name: "nguyen van d", position: "Tiền vệ", number: "20", type: 0 },
-    { id: "005", name: "nguyen van e", position: "Hậu vệ cánh", number: "9", type: 0 },
-    { id: "006", name: "nguyen van f", position: "Tiền đạo cắm", number: "16", type: 0 },
+    {
+      id: "001",
+      name: "nguyen van a",
+      position: "Thủ môn",
+      number: "1",
+      type: 1,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+    },
+    {
+      id: "002",
+      name: "nguyen van b",
+      position: "Hậu vệ",
+      number: "3",
+      type: 0,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+    },
+    {
+      id: "003",
+      name: "nguyen van c",
+      position: "Tiền đạo",
+      number: "7",
+      type: 0,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+    },
+    {
+      id: "004",
+      name: "nguyen van d",
+      position: "Tiền vệ",
+      number: "20",
+      type: 0,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+    },
+    {
+      id: "005",
+      name: "nguyen van e",
+      position: "Hậu vệ cánh",
+      number: "9",
+      type: 0,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+
+    },
+    {
+      id: "006",
+      name: "nguyen van f",
+      position: "Tiền đạo cắm",
+      number: "16",
+      type: 0,
+      cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
+    },
   ]
 
   index: number = 0;

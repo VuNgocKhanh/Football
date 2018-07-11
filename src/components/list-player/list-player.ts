@@ -18,8 +18,6 @@ export class ListPlayerComponent {
   title_number_player: "Số áo";
   title: string = "";
 
-  avatarUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png";
-
   constructor() {
     this.title = "Danh sách cầu thủ";
     this.title_position = "Vị trí";

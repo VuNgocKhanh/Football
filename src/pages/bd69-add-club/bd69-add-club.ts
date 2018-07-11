@@ -16,11 +16,13 @@ import { AppModuleProvider } from '../../providers/app-module/app-module';
   templateUrl: 'bd69-add-club.html',
 })
 export class Bd69AddClubPage {
-  mClub = new Clubs()
+  title: string = "Thêm đội bóng";
+  placeholder: string ="Nhập tên đội bóng";
 
-  name: string = "Club Name";
+  mClub = new Clubs();
+  club_name: string = "Tên đội bóng";
+
   type: string = "";
-  placeholder: string = "Fill club name";
   value: string = "";
 
   constructor(
@@ -30,9 +32,9 @@ export class Bd69AddClubPage {
   ) { }
 
 
-  getValue(event) {
-    this.mClub.name = event;
-  }
+  // getValue(event) {
+  //   this.mClub.name = event;
+  // }
 
   createClub() {
     this.mAppModule.showModal("Bd69ClubsPage", { data: this.mClub });

@@ -2,4 +2,16 @@ page-bd69-add-club {
     .avatar{
         height: 10rem;
     }
+    .club-logo{
+        height: 10rem;
+        width: 10rem;
+        background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .btn-create{
+        background: linear-gradient(to right, #246A2E, #213623);
+        border-radius: 32px;
+    }
 }

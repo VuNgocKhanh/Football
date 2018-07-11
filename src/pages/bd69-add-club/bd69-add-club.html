@@ -6,23 +6,29 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>bd69-add-club</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content>
   <ion-row>
-    <ion-col class="avatar" col-5>
-
+    <ion-col class="a3-container-center a1-padding">
+      <div class="club-logo"></div>
     </ion-col>
   </ion-row>
-  <form-input [name]="name" [placeholder]="placeholder" [value]="mClub.name" (onInput)="getValue($event)"></form-input>
   <ion-row>
-    <ion-col col-4>
-      <button ion-button full (click)="createClub()">Create Club</button>
+    <ion-col col-4 class="a3-container">
+      <span class="font-size-16 a3-container-center">{{club_name}}:</span>
     </ion-col>
+    <ion-col col-8>
+      <ion-input [placeholder]="placeholder" [(ngModel)]="mClub.name"></ion-input>
+    </ion-col>
+  </ion-row>
+  <!-- <form-input [name]="name" [placeholder]="placeholder" [value]="mClub.name" (onInput)="getValue($event)"></form-input> -->
+  <ion-row class="a3-container-center">
+      <button class="btn-create" ion-button (click)="createClub()">Create Club</button>
   </ion-row>
 </ion-content>
