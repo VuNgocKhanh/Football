@@ -1,0 +1,50 @@
+page-create-leage {
+  $size: 100px;
+  .form-container {
+    padding: 1rem;
+  }
+  // .toolbar-background {
+  //   background: linear-gradient(45deg, #246A2E, #213623);
+  // }
+  .bar-button {
+    color: white !important;
+  }
+  .toolbar-title {
+    color: white !important;
+    // font-family: sans-serif;
+  }
+  .logo {
+    height: $size * 0.6;
+    width: $size * 0.6;
+    margin: 1rem auto;
+  }
+  .item {
+    padding-left: 0;
+    font-size: 1.4rem;
+    .item-inner {
+      border-bottom: 1px dashed lightgray !important;
+      padding-right: 0 !important;
+      padding-left: 5px;
+    }
+  }
+  .form-title {
+    font-size: 1.4rem;
+    padding: 10px 5px 10px 5px;
+  }
+  ion-textarea {
+    border: 1px solid lightgray;
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  .btn {
+    background: linear-gradient(45deg, #246A2E, #213623);
+    color: white;
+    border-radius: 20px;
+    min-width: 60%;
+    margin: 1.6rem auto;
+    ion-icon {
+      margin-left: .6rem;
+    }
+  }
+}

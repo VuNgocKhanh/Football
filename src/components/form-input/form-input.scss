@@ -7,8 +7,10 @@ form-input {
         text-overflow: ellipsis;
         overflow: hidden;
     }
-    .star{
-        
+    .row{
+        border-bottom: 1px dashed lightgray;
     }
-    
+    // .row:last-child{
+    //     border: none;
+    // }
 }

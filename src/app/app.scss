@@ -624,3 +624,68 @@
     color: #B4B3B3;
   }
 
+
+//////////////////////////
+.circle {
+  border-radius: 50%;
+}
+.background-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.border {
+  border: 1px solid lightgray;
+}
+
+.btn {
+  transform: scale(1);
+  transition: 100ms;
+}
+
+.btn:active {
+  transform: scale(.92);
+}
+
+.color-white {
+  color: white;
+}
+
+.toolbar-background {
+  background: #192F3D;
+}
+
+.big-font{
+  font-size: map-get($map: $appSizes, $key: big);
+}
+.large-font{
+  font-size: map-get($map: $appSizes, $key: large);
+}
+.normal-font{
+  font-size: map-get($map: $appSizes, $key: normal);
+}
+.semi-font{
+  font-size: map-get($map: $appSizes, $key: semi);
+}
+.small-font{
+  font-size: map-get($map: $appSizes, $key: small);
+}
+
+.primary-color{
+  font-size: map-get($map: $appColors, $key: primary);
+}
+.secondary-color{
+  font-size: map-get($map: $appColors, $key: secondary);
+}
+.yellow-color{
+  font-size: map-get($map: $appColors, $key: yellow);
+}
+.red-color{
+  font-size: map-get($map: $appColors, $key: red);
+}
+.green-color{
+  font-size: map-get($map: $appColors, $key: green);
+}
+.black-color{
+  font-size: map-get($map: $appColors, $key: black);
+}

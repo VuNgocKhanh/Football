@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
-import { FbAccountKitController } from '../../fb-accountkit/fb-accountkit';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -12,8 +12,7 @@ import { FbAccountKitController } from '../../fb-accountkit/fb-accountkit';
 export class HomePage {
   searchQuery: string = '';
   items : Array<any> = ["Arsenal", "Manchester United" , "Chelsea", "Real Madrid", "Barcelona", "Bayern Munich"];
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public storage: Storage) {
   }
 
   getItems(ev: any) {
@@ -27,11 +26,4 @@ export class HomePage {
   }
   }
 
-  callAccKit(){
-    FbAccountKitController._getIntance().register((data)=>{
-      alert("dang nhap thanh cong");
-      console.log(data);
-      
-    });
-  }
 }

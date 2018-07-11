@@ -1,0 +1,19 @@
+page-profile {
+    #header {
+        height: 30%;
+        background: linear-gradient(to bottom, #254355, #102836);
+        position: relative;
+    }
+    #avatar {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background: url("../assets/imgs/avatar-default.jpg");
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-position: 100% 100%;
+        background-size: cover;
+    }
+}
