@@ -1,1 +1,43 @@
-page-users {}
+page-users {
+    .toolbar-background {
+        background: #192F3D;
+    }
+    .toolbar-title {
+        color: white;
+    }
+    ion-content {
+        background: linear-gradient(to bottom, #254355, #102836);
+    }
+    h2 {
+        color: white
+    }
+    .item {
+        background: none;
+        padding-left: 0;
+    }
+    .avatar {
+        background: url("../assets/imgs/avatar-default.jpg");
+        width: 47px;
+        height: 47px;
+        border-radius: 50%;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    .item-inner {
+        border: none !important;
+    }
+    #profile {
+        border-bottom: 1px solid gray;
+    }
+    .item-block:last-child,
+    {
+        border-bottom: none;
+    }
+    .item-wrapper:last-child {
+        border-bottom: none;
+    }
+    #clubs {
+        overflow: auto;
+        height: 800px;
+    }
+}

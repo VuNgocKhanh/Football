@@ -1,17 +1,28 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ModalController } from 'ionic-angular';
+import { Clubs } from '../classes/clubs';
 
-/*
-  Generated class for the AppModuleProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AppModuleProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello AppModuleProvider Provider');
+  constructor(
+    public mModalController: ModalController
+  ) { }
+
+
+  /**page: Page, params: Params, callback: function after dimiss modal */
+  public showModal(page, params?: any, callback?: any): void {
+    let modal = this.mModalController.create(page, params ? params : null, {
+      enterAnimation: 'fade-in',
+      leaveAnimation: 'fade-out'
+    });
+    modal.present();
+    modal.onDidDismiss((data) => {
+      if (callback) {
+        callback(data);
+      }
+    })
   }
 
 }

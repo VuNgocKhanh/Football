@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { FormInputComponent } from './form-input/form-input';
-import { MenuHoziComponent } from './menu-hozi/menu-hozi';
 @NgModule({
 	declarations: [
-    FormInputComponent,
-    MenuHoziComponent
+		FormInputComponent
+	
 	],
 	imports: [
 		IonicModule
 	],
-	exports: [
-    FormInputComponent,
-    MenuHoziComponent
-	]
+	exports: [FormInputComponent]
 })
 export class ComponentsModule { }
