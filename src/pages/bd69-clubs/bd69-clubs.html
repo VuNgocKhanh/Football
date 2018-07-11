@@ -16,7 +16,7 @@
 <ion-content>
   <ion-row>
     <ion-col class="avatar" col-5></ion-col>
-    <ion-col col-7>{{club_name_}}</ion-col>
+    <ion-col col-7>{{mClub.name}}</ion-col>
   </ion-row>
   <ion-row>
     <ion-col col-4 (click)="isClickList()">{{list_player}}</ion-col>
@@ -31,8 +31,8 @@
       </ion-row>
     </ion-col>
     <ion-col class="box" [class.show]="index==1" col-12>
-      <ion-row>{{club_name}}:&nbsp;{{club_name_}}</ion-row>
-      <ion-row>{{club_member}}:&nbsp;{{club_member_}}</ion-row>
+      <ion-row>{{club_name}}:&nbsp;{{mClub.name}}</ion-row>
+      <ion-row>{{club_member}}:&nbsp;{{mClub.member}}</ion-row>
     </ion-col>
   </ion-row>
 </ion-content>

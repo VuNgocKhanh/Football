@@ -9,9 +9,9 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  // rootPage:any = TabsPage;
 
-  // rootPage: any = "Bd69AddClubPage";
+  rootPage: any = "Bd69ManagerClubPage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -12,6 +12,9 @@ import { UsersPage } from '../pages/users/users';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppModuleProvider } from '../providers/app-module/app-module';
+import { FadeInTransiton } from '../transitions/fade-in.transition';
+import { FadeOutTransition } from '../transitions/fade-out.transition';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppModuleProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(public config: Config) {
+    this.config.setTransition('fade-in', FadeInTransiton);
+    this.config.setTransition('fade-out', FadeOutTransition);
+  }
+}

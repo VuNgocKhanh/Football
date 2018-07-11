@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Clubs } from '../../providers/classes/clubs';
 
 /**
  * Generated class for the Bd69ClubsPage page.
@@ -15,6 +16,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Bd69ClubsPage {
 
+  mClub: Clubs = null;
+
   list = [
     { id: "001", name: "nguyen van a", type: 1 },
     { id: "002", name: "nguyen van b", type: 0 },
@@ -26,24 +29,29 @@ export class Bd69ClubsPage {
 
   name: string = "";
   index: number = 0;
+  
 
   list_player: string = "Danh sách";
   info: string = "Thông tin";
   player_type: string = "thành viên";
 
   club_name: string = "Tên đội bóng";
-  club_name_: string = "";
   club_member: string = "Số thành viên";
-  club_member_: number = 0
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.club_name_ = this.navParams.get('data');
-    this.club_member_ = this.list.length
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams) {
+    if(this.navParams.get('data')){
+      this.mClub = this.navParams.get('data');
+      this.mClub.member = this.list.length
+    }
+      
   }
 
 
   ionViewDidLoad() {
-
+    console.log(this.mClub);
+    
 
   }
 

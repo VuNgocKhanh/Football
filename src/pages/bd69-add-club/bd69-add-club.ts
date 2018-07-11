@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Clubs } from '../../providers/classes/clubs';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
 
 /**
  * Generated class for the Bd69AddClubPage page.
@@ -14,28 +16,26 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
   templateUrl: 'bd69-add-club.html',
 })
 export class Bd69AddClubPage {
+  mClub = new Clubs()
 
   name: string = "Club Name";
   type: string = "";
   placeholder: string = "Fill club name";
   value: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public mModalController: ModalController
-  ) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public mAppModule: AppModuleProvider
+  ) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69AddClubPage');
-  }
 
   getValue(event) {
-    this.value = event;
+    this.mClub.name = event;
   }
 
   createClub() {
-    let mModal = this.mModalController.create("Bd69ClubsPage", { data: this.value })
-    mModal.present();
+    this.mAppModule.showModal("Bd69ClubsPage", { data: this.mClub });
   }
 
 }
