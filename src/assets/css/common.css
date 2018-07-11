@@ -35,6 +35,10 @@
     transform: translate(-50%, -50%);
 }
 
+.a1-nowrap{
+    white-space: nowrap;
+}
+
 .a1-inline-block {
     display: inline-block;
 }

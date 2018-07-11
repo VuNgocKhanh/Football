@@ -41,6 +41,23 @@ $colors: (
   dark:       #222
 );
 
+$appColors: (
+  primary: #192F3D,
+  secondary: #37A485,
+  red: #EF395C,
+  yellow: #FEE161,
+  green: #07DA76,
+  black: #1D1C1C
+);
+
+$appSizes: (
+  big: 2rem,
+  large: 1.8rem,
+  normal: 1.6rem,
+  semi: 1.4rem,
+  small: 1.2rem
+);
+
 
 // App iOS Variables
 // --------------------------------------------------
@@ -86,3 +103,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: "Heiti-TC-Light";
+  src: local("Heiti-TC-Light"), local("Heiti-TC-Light"), url("../assets/fonts/Heiti-TC-Light.woff") format("woff2");
+}

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the LeagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <div class="a3-container-center color-white head-title">
+      <ion-icon name="ios-trophy-outline"></ion-icon>
+      <span>Giải đấu</span>
+    </div>
+    <div class="menu-container">
+      <menu-hozi [menuList]="menuList" (onSelect)="getSelect($event)"></menu-hozi>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <div class="mode-tables">
+    <table style="width:100%">
+      <tr class="header-table">
+        <th colspan="2">Đội bóng</th>
+        <th>Thắng</th>
+        <th>Thua</th>
+        <th>Hoà</th>
+        <th>Điểm</th>
+      </tr>
+      <tr *ngFor="let table of tables; let i = index" class="content-table">
+        <td colspan="2" class="a1-relative">
+          <div class="a3-container-center">
+            <div class="stt a1-absolute">{{i + 1}}</div>
+            <div class="logo background-image" [ngStyle]="{'background-image': 'url('+table.logo+')'}"></div>
+            <div class="club-name">{{table.name}}</div>
+          </div>
+        </td>
+        <td>{{table.win}}</td>
+        <td>{{table.lose}}</td>
+        <td>{{table.thwart}}</td>
+        <td>{{table.getScore()}}</td>
+      </tr>
+    </table>
+  </div>
+</ion-content>

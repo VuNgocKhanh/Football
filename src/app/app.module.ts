@@ -25,7 +25,9 @@ import { AppModuleProvider } from '../providers/app-module/app-module';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: true,
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
