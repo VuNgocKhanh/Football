@@ -1,0 +1,19 @@
+<ion-row class="title">
+  <ion-col col-12>{{title}}</ion-col>
+</ion-row>
+<ion-row class="club-item" *ngFor="let player of listPlayer">
+  <ion-col col-2 class="avatar-player" [ngStyle]="{'background-image':'url('+avatarUrl+')'}"></ion-col>
+  <ion-col col-6>
+    <ion-row class="value-change">{{player.name}}</ion-row>
+    <ion-row>
+      <span class="title-detail">{{title_position}}:</span>&ensp;
+      <span class="value-change">{{player.position}}</span>
+    </ion-row>
+  </ion-col>
+  <ion-col col-4 class="a3-container">
+    <ion-row class="a3-items-end">
+      <span class="title-detail">{{title_number_player}}:</span>&ensp;
+      <span class="value-change">{{player.number}}</span>
+    </ion-row>
+  </ion-col>
+</ion-row>

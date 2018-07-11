@@ -13,10 +13,10 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="content-fix">
   <ion-row>
     <ion-col class="avatar" col-5></ion-col>
-    <ion-col col-7>{{club_name_}}</ion-col>
+    <ion-col col-7>{{mClub.name}}</ion-col>
   </ion-row>
   <ion-row>
     <ion-col col-4 (click)="isClickList()">{{list_player}}</ion-col>
@@ -24,15 +24,16 @@
   </ion-row>
   <ion-row>
     <ion-col class="box" [class.show]="index==0" col-12>
-      <ion-row *ngFor="let player of list">
+      <!-- <ion-row *ngFor="let player of list">
         <ion-col col-3>{{player.id}}</ion-col>
         <ion-col col-5>{{player.name}}</ion-col>
         <ion-col col-4>{{getType(player.type)}}</ion-col>
-      </ion-row>
+      </ion-row> -->
+      <list-player [listPlayer]="list"></list-player>
     </ion-col>
     <ion-col class="box" [class.show]="index==1" col-12>
-      <ion-row>{{club_name}}:&nbsp;{{club_name_}}</ion-row>
-      <ion-row>{{club_member}}:&nbsp;{{club_member_}}</ion-row>
+      <ion-row>{{club_name}}:&nbsp;{{mClub.name}}</ion-row>
+      <ion-row>{{club_member}}:&nbsp;{{mClub.member}}</ion-row>
     </ion-col>
   </ion-row>
 </ion-content>
