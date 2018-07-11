@@ -11,10 +11,10 @@ import { UsersPage } from '../users/users';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
-  tab4Root = UsersPage;
+  tab1Root = "HomePage";
+  tab2Root = "AboutPage";
+  tab3Root = "ContactPage";
+  tab4Root = "UsersPage";
 
   constructor() {
 
