@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
 
 /**
  * Generated class for the Bd69ManagerClubPage page.
@@ -42,12 +43,24 @@ export class Bd69ManagerClubPage {
       member: 11
     }
   ]
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public mAppModule: AppModuleProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Bd69ManagerClubPage');
+  }
+
+  onClickClub(club) {
+    this.mAppModule.showModal("Bd69ClubsPage", { data: club });
+  }
+
+  onCreateClub() {
+    this.mAppModule.showModal("Bd69AddClubPage");
   }
 
 }

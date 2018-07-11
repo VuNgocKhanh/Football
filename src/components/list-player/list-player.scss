@@ -1,0 +1,35 @@
+list-player {
+    .title{
+        background-color: #37A485;
+        color: white;
+        line-height: 2.2rem;
+        font-size: 1.5rem;
+    }
+    .title-detail{
+        color: #37A485;
+        line-height: 2.4rem;
+        font-size: 1.4rem;
+    }
+    .value-change{
+        color: white;
+        line-height: 2.2rem;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+    }
+    .club-item{
+        border-bottom: 1px solid #37A485;
+        padding-bottom: 5px;
+        padding-top: 12px;
+        // font-weight: lighter;
+    }
+    .club-item:last-child{
+        border-bottom: none;
+    }
+    .avatar-player{
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 5rem;
+        // margin: 4px 0 2px 0;
+    }
+}

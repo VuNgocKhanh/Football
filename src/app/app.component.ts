@@ -11,7 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   // rootPage:any = TabsPage;
 
-  rootPage: any = "Bd69ManagerClubPage";
+  rootPage: any = "Bd69ClubsPage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
