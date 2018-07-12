@@ -626,6 +626,17 @@
 
 
 //////////////////////////
+$background: linear-gradient(to bottom, #254355, #102836);
+
+ion-content.content{
+  background: $background;
+}
+.bar-button {
+  color: white !important;
+}
+.toolbar-title {
+  color: white !important;
+}
 .circle {
   border-radius: 50%;
 }
@@ -634,6 +645,7 @@
     background-size: cover;
     background-position: center center;
 }
+
 .border {
   border: 1px solid lightgray;
 }
@@ -672,20 +684,23 @@
 }
 
 .primary-color{
-  font-size: map-get($map: $appColors, $key: primary);
+  color: map-get($map: $appColors, $key: primary);
 }
 .secondary-color{
-  font-size: map-get($map: $appColors, $key: secondary);
+  color: map-get($map: $appColors, $key: secondary);
 }
 .yellow-color{
-  font-size: map-get($map: $appColors, $key: yellow);
+  color: map-get($map: $appColors, $key: yellow);
 }
 .red-color{
-  font-size: map-get($map: $appColors, $key: red);
+  color: map-get($map: $appColors, $key: red);
 }
 .green-color{
-  font-size: map-get($map: $appColors, $key: green);
+  color: map-get($map: $appColors, $key: green);
 }
 .black-color{
-  font-size: map-get($map: $appColors, $key: black);
+  color: map-get($map: $appColors, $key: black);
+}
+.white-color{
+  color: white;
 }

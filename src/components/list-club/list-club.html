@@ -1,0 +1,19 @@
+<!-- Generated template for the ListClubComponent component -->
+<div>
+  <ion-row *ngFor="let club of mClubs" align-items-center class="mlclub-container" tappable>
+    <ion-col col-2>
+      <div class="circle club-thumnail background-image"
+      [ngStyle]="{'background-image':'url('+club.logo+')'}"></div>
+    </ion-col>
+    <ion-col col-6>
+      <div class="club-name white-color normal-font a1-nowrap a1-textover">
+        {{club.name}}
+      </div>
+    </ion-col>
+    <ion-col col-4>
+      <div class="small-font white-color a1-nowrap" text-right>
+        Xem thông tin
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

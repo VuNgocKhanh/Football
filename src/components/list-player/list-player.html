@@ -1,19 +1,29 @@
-<ion-row class="title">
-  <ion-col col-12>{{title}}</ion-col>
-</ion-row>
-<ion-row class="club-item" *ngFor="let player of listPlayer">
-  <ion-col col-2 class="avatar-player" [ngStyle]="{'background-image':'url('+player.cover+')'}"></ion-col>
-  <ion-col col-6>
-    <ion-row class="value-change">{{player.name}}</ion-row>
-    <ion-row>
-      <span class="title-detail">{{title_position}}:</span>&ensp;
-      <span class="value-change">{{player.position}}</span>
-    </ion-row>
+<ion-row align-items-center class="club-item" *ngFor="let player of listPlayer">
+  <ion-col col-3 >
+    <div class="avatar-player circle background-image" [ngStyle]="{'background-image':'url('+player.cover+')'}"></div>
   </ion-col>
-  <ion-col col-4 class="a3-container">
-    <ion-row class="a3-items-end">
-      <span class="title-detail">{{title_number_player}}:</span>&ensp;
-      <span class="value-change">{{player.number}}</span>
-    </ion-row>
+  <ion-col col-9>
+    <div class="player-name normal-font white-color">
+      {{player.name}}
+    </div>
+    <div class="a3-container a3-items-end white-color row-2">
+      <div class="a3-container a3-items-end a3-item">
+        <div class="secondary-color small-font a1-nowrap">
+          <span>{{title_position}}:</span>&ensp;
+        </div>
+        <div class="semi-font a1-nowrap">
+          <span>{{player.position}}</span>
+        </div>
+      </div>
+
+      <div class="a3-container a3-items-end a3-item">
+        <div class="secondary-color small-font a1-nowrap">
+          <span>{{title_number_player}}:</span>&ensp;
+        </div>
+        <div class="semi-font">
+          <span>{{player.number}}</span>
+        </div>
+      </div>
+    </div>
   </ion-col>
 </ion-row>

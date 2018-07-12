@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppModuleProvider } from '../../providers/app-module/app-module';
+import { Clubs } from '../../providers/classes/clubs';
 
 /**
  * Generated class for the Bd69ManagerClubPage page.
@@ -15,7 +16,7 @@ import { AppModuleProvider } from '../../providers/app-module/app-module';
   templateUrl: 'bd69-manager-club.html',
 })
 export class Bd69ManagerClubPage {
-
+  mClubs: Array<Clubs> = [];
   list_club = [
     {
       id: 1,
@@ -53,8 +54,17 @@ export class Bd69ManagerClubPage {
   ) {
   }
 
+  onLoadClub(){
+    for(let i = 0; i < 10; i ++){
+      let newClub = new Clubs();
+      newClub.setLogo(this.logo);
+      this.mClubs.push(newClub);
+    }
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad Bd69ManagerClubPage');
+    this.onLoadClub();
   }
 
   onClickClub(club) {

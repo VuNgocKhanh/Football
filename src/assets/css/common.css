@@ -39,6 +39,10 @@
     white-space: nowrap;
 }
 
+.a1-textover{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .a1-inline-block {
     display: inline-block;
 }

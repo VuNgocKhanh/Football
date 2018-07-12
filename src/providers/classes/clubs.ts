@@ -1,5 +1,5 @@
 export class Clubs {
-    id: string;
+    id: number;
     name: string;
     logo: string;
     time_create: string;
@@ -10,9 +10,9 @@ export class Clubs {
     }
 
     reset() {
-        this.id = "";
-        this.name = "";
-        this.logo = "";
+        this.id = -1;
+        this.name = "FC Lorem";
+        this.logo = "../assets/imgs/logo.png";
         this.time_create = "";
         this.member = 0;
     }
@@ -24,4 +24,13 @@ export class Clubs {
         if (data.time_create) this.time_create = data.time_create;
         if (data.member) this.member = data.member;
     }
+
+    setName(name: string){
+        this.name = name;
+    }
+
+    setLogo(logo: string){
+        this.logo = logo;
+    }
+
 }
