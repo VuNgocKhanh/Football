@@ -25,4 +25,8 @@ export class CalendarDate {
     getId(): string {
         return this.dd + "" + this.mm + "" + this.yy;
     }
+
+    getDateString(): string{
+        return (this.dd < 10 ? "0" : "") + this.dd +" - "+ (this.mm + 1 < 10 ? "0": "") + (this.mm + 1) +" - "+ this.yy; 
+    }
 }

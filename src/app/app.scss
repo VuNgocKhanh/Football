@@ -631,6 +631,12 @@ $background: linear-gradient(to bottom, #254355, #102836);
 ion-content.content{
   background: $background;
 }
+.toolbar{
+  padding-left: 10px !important;
+}
+.btn-back{
+  font-size: .5em;
+}
 .bar-button {
   color: white !important;
 }

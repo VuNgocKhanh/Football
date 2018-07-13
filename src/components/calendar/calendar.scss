@@ -3,26 +3,56 @@ calendar {
   .circle {
     height: $circle * 0.3;
     width: $circle * 0.3;
-    background: map-get($map: $appColors, $key: yellow);
-    // opacity: .4;
+    background: #E4DC7D; // opacity: .4;
     border-radius: 50%;
-    z-index: -1;
+    z-index: 1;
   }
   .calendar-container {
     width: 100%;
+    background: #253141;
+    padding: 10px;
+    border-radius: 10px;
     .day {
       width: 14.2857143%;
       text-align: center;
       padding: .8rem .6rem;
-      color: map-get($map: $appColors, $key: lightgray);
       white-space: nowrap;
-      &.black {
-        color: map-get($map: $appColors, $key: black);
+      color: white;
+      span{
+        z-index: 9;
+        position: relative;
+      }
+      &.gray{
+        opacity: .6;
+      }
+      &.selected{
+        color: black;
+        font-weight: bold;
       }
     }
     .day-of-week {
       display: flex;
     }
     .day-of-month {}
+  }
+  .month-name{
+    color: #E4DC7D;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 16px 0;
+    position: relative;
+  }
+  .arrow-left{
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .arrow-right{
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 }

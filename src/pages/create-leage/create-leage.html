@@ -8,8 +8,8 @@
 
   <ion-toolbar>
     <ion-buttons left>
-      <button ion-button navPop>
-        <ion-icon name="arrow-back"></ion-icon>
+      <button ion-button navPop class="btn-back">
+        <ion-icon name="bd69-arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Tạo giải đấu</ion-title>
@@ -18,30 +18,76 @@
 
 
 <ion-content>
-  <div class="logo circle border a3-container-center"></div>
-  <div class="form-container">
-    <form-input *ngFor="let in of arrayInput" [name]="in.name" [placeholder]="in.placeholder" [no-icon]="true" [disabled]="false"
-      (onInput)="getInput($event,in)"></form-input>
-    <ion-item>
-      <ion-label>
-        Ngày bắt đầu:
-      </ion-label>
-      <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="start_date"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Ngày kết thúc:
-      </ion-label>
-      <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="end_date"></ion-datetime>
-    </ion-item>
-
-    <div class="form-title">Địa điểm</div>
-    <ion-textarea rows="2"></ion-textarea>
-
-    <button ion-button class="btn a3-container-center">
-      Tạo giải đấu
-      <ion-icon name="arrow-forward"></ion-icon>
-    </button>
+  <div class="list-devider-header">
+    Thông tin cơ bản
   </div>
+  <div class="a1-relative">
+    <div class="logo circle background-image " [ngStyle]="{'background-image': 'url('+newLeague.thumnail+')'}"></div>
+    <div class="a1-absolute logo-t">
+      Logo
+    </div>
+  </div>
+  <div class="padding">
+    <div class="form-container">
+      <form-input [name]="arrayInput[0].name" [placeholder]="arrayInput[0].placeholder" [type]="arrayInput[0].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+    <div class="form-container">
+      <form-calendar [name]="'Ngày bắt đầu'" (onDateChange)="getChange($event)"></form-calendar>
+    </div>
+    <div class="form-container">
+      <form-calendar [name]="'Ngày kết thúc'" (onDateChange)="getChange($event)"></form-calendar>
+    </div>
+  </div>
+
+  <div class="list-devider-header" margin-top>
+    Thể lệ
+  </div>
+
+  <div class="padding">
+    <div class="form-container">
+      <form-input [name]="arrayInput[1].name" [placeholder]="arrayInput[1].placeholder" [type]="arrayInput[1].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+    <div class="form-container">
+      <form-input [name]="arrayInput[2].name" [placeholder]="arrayInput[2].placeholder" [type]="arrayInput[2].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+
+    <div class="form-container">
+      <form-calendar [name]="'Ngày đăng kí'" (onDateChange)="getChange($event)"></form-calendar>
+    </div>
+    <div class="form-container">
+      <form-calendar [name]="'Kết thúc đăng kí'" (onDateChange)="getChange($event)"></form-calendar>
+    </div>
+
+    <div class="score-rule normal-font" padding-top padding-bottom>
+      Cách tính điểm
+    </div>
+
+    <div class="form-container">
+      <form-input [name]="arrayInput[3].name" [placeholder]="arrayInput[3].placeholder" [type]="arrayInput[3].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+    <div class="form-container">
+      <form-input [name]="arrayInput[4].name" [placeholder]="arrayInput[4].placeholder" [type]="arrayInput[4].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+    <div class="form-container">
+      <form-input [name]="arrayInput[5].name" [placeholder]="arrayInput[5].placeholder" [type]="arrayInput[5].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
+
+    <div class="score-rule normal-font a1-relative" padding-top padding-bottom>
+      File đính kèm
+      <div class="a1-absolute right">
+        <ion-icon name="add"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <button ion-button class="btn a3-container-center">
+    Hoàn thành
+    <ion-icon name="bd69-arrow-forward"></ion-icon>
+  </button>
 
 </ion-content>
