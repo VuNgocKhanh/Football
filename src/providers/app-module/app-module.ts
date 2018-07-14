@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, AlertController } from 'ionic-angular';
 import { Clubs } from '../classes/clubs';
 
 
@@ -7,7 +7,8 @@ import { Clubs } from '../classes/clubs';
 export class AppModuleProvider {
 
   constructor(
-    public mModalController: ModalController
+    public mModalController: ModalController,
+    public mAlerController: AlertController
   ) { }
 
 

@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 
@@ -10,6 +10,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { LoadingPage } from '../pages/loading/loading';
 import { AppModuleProvider } from '../providers/app-module/app-module';
+import { FadeInTransiton } from '../transitions/fade-in.transition';
+import { FadeOutTransition } from '../transitions/fade-out.transition';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { AppModuleProvider } from '../providers/app-module/app-module';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{
+    IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
     }),
     IonicStorageModule.forRoot()
@@ -43,8 +45,13 @@ import { AppModuleProvider } from '../providers/app-module/app-module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AppModuleProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(public config: Config) {
+    this.config.setTransition('fade-in', FadeInTransiton);
+    this.config.setTransition('fade-out', FadeOutTransition);
+  }
+}

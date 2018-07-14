@@ -10,7 +10,11 @@ import { Storage } from '@ionic/storage';
 })
 export class MyApp {
 
-  rootPage:any = "LoadingPage";
+  // rootPage:any = "LoadingPage";
+  
+  // rootPage: any = "Bd69ManagerClubPage";
+  rootPage: any = "Bd69ClubsPage";
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage : Storage) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

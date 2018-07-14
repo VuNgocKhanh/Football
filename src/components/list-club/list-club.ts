@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Clubs } from '../../providers/classes/clubs';
 
 /**
@@ -13,11 +13,17 @@ import { Clubs } from '../../providers/classes/clubs';
 })
 export class ListClubComponent {
   @Input("clubs") mClubs: Array<Clubs> = [];
+  @Output("clickClub") clickClub = new EventEmitter();
+
   text: string;
 
   constructor() {
     console.log('Hello ListClubComponent Component');
     this.text = 'Hello World';
+  }
+
+  goClubsDetail(club){
+    this.clickClub.emit(club)
   }
 
 }
