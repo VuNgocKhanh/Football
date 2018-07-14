@@ -19,14 +19,26 @@ export class CreateLeagePage {
   start_date = "2018-07-09";
   end_date = "2018-07-09";
   arrayInput : Array<{name: string, placeholder: string, value: string, type: string}> = [
-    {name: "Tên", placeholder: "Nhập tên đội bóng", value: "", type: "text"},
+    {name: "Tên", placeholder: "Nhập tên giải đấu", value: "", type: "text"},
     {name: "Số đội", placeholder: "Số đội bóng", value: "", type: "number"},
     {name: "Số người", placeholder: "Số người tối đa đăng kí", value: "", type: "number"},
     {name: "Đội thắng", placeholder: "Số điểm cho đội thắng", value: "", type: "number"},
     {name: "Đội hoà", placeholder: "Số điểm cho đội hoà", value: "", type: "number"},
-    {name: "Đội thua", placeholder: "Số điểm cho đội thua", value: "", type: "number"}
-  ]
+    {name: "Đội thua", placeholder: "Số điểm cho đội thua", value: "", type: "number"},
+    {name: "Cầu thủ", placeholder: "Số người đá trên sân", value: "", type: "number"}
+  ];
+
+  marrays: Array<{id: number, name: string}> = [
+    {id: 0, name: "Vòng tròn"},
+    {id: 1, name: "Chia bảng"}
+  ];
+
+  mselected: number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  getSelected($event){
+    this.mselected = $event;
   }
 
   ionViewDidLoad() {

@@ -1,5 +1,5 @@
 export class Leagues{
-    id: number = -1;
+    private id: number;
     name: string = "League";
     thumnail: string = "../assets/imgs/logo.png";
     club_number: number = 0;
@@ -12,5 +12,9 @@ export class Leagues{
     lose: number = 0;
     thwart: number = 1;
     file: string = "";
+
+   
+
     constructor(){}
+
 }

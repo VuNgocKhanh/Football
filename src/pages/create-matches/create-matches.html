@@ -1,0 +1,59 @@
+<!--
+  Generated template for the CreateMatchesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+          <button ion-button navPop class="btn-back">
+            <ion-icon name="bd69-arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>Tạo trận đấu</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-bounce>
+  <div class="padding">
+    <ion-row align-items-center>
+      <ion-col col-5 text-center>
+        <div class="circle club-logo background-image" [ngStyle]="{'background-image': 'url('+club1.logo+')'}"></div>
+        <div class="club-name a1-textover a1-nowrap" (click)="showRadio(1)">
+          {{club1.name}}
+        </div>
+      </ion-col>
+      <ion-col col-2 text-center>
+        <div class="white-color big-font" margin-bottom>vs</div>
+      </ion-col>
+      <ion-col col-5 text-center>
+        <div class="circle club-logo background-image" [ngStyle]="{'background-image': 'url('+club2.logo+')'}"></div>
+        <div class="club-name a1-textover a1-nowrap" (click)="showRadio(2)">
+          {{club2.name}}
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="form-container">
+      <form-input [name]="'Vòng đấu: '" [no-icon]="true" [disabled]="false" [placeholder]="'Tên vòng đấu'"></form-input>
+    </div>
+    <div class="form-container">
+      <form-calendar [name]="'Ngày thi đấu: '"></form-calendar>
+    </div>
+    <div class="form-container">
+      <form-time [name]="'Giờ thi đấu: '"></form-time>
+    </div>
+
+    <div class="form-container" *ngFor="let m of arrays">
+      <form-select [name]="m.name" [values]="m.values" [selected]="m.selected" (onChange)="getChange($event,m)"></form-select>
+    </div>
+
+    
+  </div>
+  <button ion-button class="btn a3-container-center">
+      Hoàn thành
+      <ion-icon name="bd69-arrow-forward"></ion-icon>
+    </button>
+</ion-content>

@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class FormSelectComponent {
   @Input("name") name: string = "Chọn";
-  @Input("values") values: Array<{id: string, name: string}> = [];
+  @Input("values") values: Array<{id: number, name: string}> = [];
   @Input("selected") mValue: number = -1;
   @ViewChild(Select) mySelect: Select;
   @Output("onChange") mEventEmitter = new EventEmitter();

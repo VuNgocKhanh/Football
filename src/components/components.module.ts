@@ -8,6 +8,10 @@ import { SearchTopComponent } from './search-top/search-top';
 import { FormSelectComponent } from './form-select/form-select';
 import { CalendarComponent } from './calendar/calendar';
 import { FormCalendarComponent } from './form-calendar/form-calendar';
+import { AcceptDelineComponent } from './accept-deline/accept-deline';
+import { TwoSegmentComponent } from './two-segment/two-segment';
+import { TimeComponent } from './time/time';
+import { FormTimeComponent } from './form-time/form-time';
 @NgModule({
 	declarations: [
 		CalendarComponent,
@@ -17,7 +21,11 @@ import { FormCalendarComponent } from './form-calendar/form-calendar';
 		MenuHoziComponent,
 		ListClubComponent,
     SearchTopComponent,
-    FormCalendarComponent
+    FormCalendarComponent,
+    AcceptDelineComponent,
+    TwoSegmentComponent,
+    TimeComponent,
+    FormTimeComponent
 	],
 	imports: [
 		IonicModule
@@ -30,7 +38,11 @@ import { FormCalendarComponent } from './form-calendar/form-calendar';
 		ListClubComponent,
 		MenuHoziComponent,
     SearchTopComponent,
-    FormCalendarComponent
+    FormCalendarComponent,
+    AcceptDelineComponent,
+    TwoSegmentComponent,
+    TimeComponent,
+    FormTimeComponent
 	]
 })
 export class ComponentsModule { }

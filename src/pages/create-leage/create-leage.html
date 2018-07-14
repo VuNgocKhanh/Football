@@ -33,6 +33,9 @@
         [disabled]="false"></form-input>
     </div>
     <div class="form-container">
+      <form-select [name]="'Thể thức'" (onChange)="getSelected($event)" [values]="marrays" [selected]="mselected"></form-select>
+    </div>
+    <div class="form-container">
       <form-calendar [name]="'Ngày bắt đầu'" (onDateChange)="getChange($event)"></form-calendar>
     </div>
     <div class="form-container">
@@ -53,9 +56,13 @@
       <form-input [name]="arrayInput[2].name" [placeholder]="arrayInput[2].placeholder" [type]="arrayInput[2].type" [no-icon]="true"
         [disabled]="false"></form-input>
     </div>
+    <div class="form-container">
+      <form-input [name]="arrayInput[6].name" [placeholder]="arrayInput[6].placeholder" [type]="arrayInput[6].type" [no-icon]="true"
+        [disabled]="false"></form-input>
+    </div>
 
     <div class="form-container">
-      <form-calendar [name]="'Ngày đăng kí'" (onDateChange)="getChange($event)"></form-calendar>
+      <form-calendar [name]="'Ngày mở đăng kí'" (onDateChange)="getChange($event)"></form-calendar>
     </div>
     <div class="form-container">
       <form-calendar [name]="'Kết thúc đăng kí'" (onDateChange)="getChange($event)"></form-calendar>
@@ -79,7 +86,7 @@
     </div>
 
     <div class="score-rule normal-font a1-relative" padding-top padding-bottom>
-      File đính kèm
+      File điều lệ giải
       <div class="a1-absolute right">
         <ion-icon name="add"></ion-icon>
       </div>

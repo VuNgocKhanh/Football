@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, AlertController } from 'ionic-angular';
 import { Clubs } from '../classes/clubs';
 import { StorageController } from '../core/storage';
 import { Storage } from '@ionic/storage';
@@ -11,6 +11,7 @@ export class AppModuleProvider {
 
   mStorageController: StorageController = null;
   constructor(
+    public mAlertController: AlertController,
     public mStorage: Storage,
     public mModalController: ModalController
   ) { 
@@ -41,6 +42,29 @@ export class AppModuleProvider {
         callback(data);
       }
     })
+  }
+
+  public showRadio(title: string, arrayInput: Array<{id: number, name: string}>, idselected: number, callback: any){
+    let alert = this.mAlertController.create();
+    alert.setTitle(title);
+    arrayInput.forEach(element => {
+      alert.addInput({
+        type: 'radio',
+        label: element.name,
+        value: element.id+"",
+        checked: element.id == idselected ? true : false
+      })
+    });
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: data => {
+        console.log(data);
+        
+        callback(data);
+      }
+    });
+    alert.present();
   }
 
 }

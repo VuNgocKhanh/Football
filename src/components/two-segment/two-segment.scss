@@ -1,0 +1,14 @@
+two-segment {
+  .m-item {
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 1px solid transparent;
+    color: white;
+    opacity: .4;
+    transition: 200ms;
+    &.selected {
+      border-bottom: 1px solid white;
+      opacity: 1;
+    }
+  }
+}
