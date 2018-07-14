@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start left>
+      <button ion-button navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>bd69-clubs</ion-title>
   </ion-navbar>
 
@@ -14,7 +19,25 @@
 
 
 <ion-content class="content-fix">
-  <div class="listPlayer-container">
-      <list-player [listPlayer]="list"></list-player>
+  <div class="a3-container">
+    <div class="avatar a1-width-40" col-5></div>
+    <div class="a1-width-60">{{mClub.name}}</div>
+  </div>
+  <div class="a3-container a1-padding">
+    <div class="a1-padding-right">
+      <div class="title-btn a3-container-center" [class.btn-forcus]="index==0" (click)="isClickList()">{{list_player}}</div>
+    </div>
+    <div>
+      <div class="title-btn a3-container-center" [class.btn-forcus]="index==1" (click)="isClickInfo()">{{info}}</div>
+    </div>
+  </div>
+  <div>
+    <div class="box" [class.show]="index==0">
+      <list-player [listPlayer]="mPlayers" (setLead)="onSetLead($event)" (setManage)="onSetManage($event)" (delete)="onDeletePlayer($event)"></list-player>
+    </div>
+    <div class="box" [class.show]="index==1">
+      <div>{{club_name}}:&nbsp;{{mClub.name}}</div>
+      <div>{{club_member}}:&nbsp;{{mClub.member}}</div>
+    </div>
   </div>
 </ion-content>

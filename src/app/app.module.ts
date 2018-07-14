@@ -26,7 +26,7 @@ import { FadeOutTransition } from '../transitions/fade-out.transition';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{
+    IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
     }),
     IonicStorageModule.forRoot()
@@ -45,7 +45,7 @@ import { FadeOutTransition } from '../transitions/fade-out.transition';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AppModuleProvider
   ]
 })

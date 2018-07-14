@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Clubs } from '../../providers/classes/clubs';
+import { Player } from '../../providers/classes/player';
 
 /**
  * Generated class for the Bd69ClubsPage page.
@@ -18,13 +19,15 @@ export class Bd69ClubsPage {
 
   mClub = new Clubs();
 
+  mPlayers: Array<Player> = []
+
   list: Array<any> = [
     {
       id: "001",
       name: "nguyen van a",
       position: "Thủ môn",
       number: "1",
-      type: 1,
+      manage: 1,
       cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
     },
     {
@@ -32,7 +35,7 @@ export class Bd69ClubsPage {
       name: "nguyen van b",
       position: "Hậu vệ",
       number: "3",
-      type: 0,
+      lead: 1,
       cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
     },
     {
@@ -40,7 +43,7 @@ export class Bd69ClubsPage {
       name: "nguyen van c",
       position: "Tiền đạo",
       number: "7",
-      type: 0,
+      type: 2,
       cover: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png"
     },
     {
@@ -85,15 +88,20 @@ export class Bd69ClubsPage {
     public navParams: NavParams) {
     if (this.navParams.get('data')) {
       this.mClub = this.navParams.get('data');
-      this.mClub.member = this.list.length
+      this.mClub.member = this.list.length;
+      // this.mPlayers.concat(this.list);
+      // console.log(this.mPlayers);
+
     }
+    this.list.forEach(item => {
+      let player = new Player(item);
+      this.mPlayers.push(player);
+    })
 
   }
 
 
   ionViewDidLoad() {
-    console.log(this.mClub);
-
 
   }
 
@@ -111,6 +119,29 @@ export class Bd69ClubsPage {
     }
     if (type == 1) {
       return this.player_type = "quản lý";
+    }
+  }
+
+  onSetManage(event) {
+    if (event) {
+      event.setManage(1);
+    }
+  }
+
+  onSetLead(event) {
+    this.mPlayers.forEach(item => {
+      if (item.lead == 1) {
+        item.setLead(0);
+      }
+    })
+    if (event) {
+      event.setLead(1);
+    }
+  }
+
+  onDeletePlayer(event) {
+    if (event) {
+      this.mPlayers.splice(event, 1);
     }
   }
 

@@ -20,4 +20,45 @@ list-player {
     .a3-item{
         margin-right: 16px;
     }
+
+    .dropdown-box{
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown{
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #192f3d;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-box:hover .dropdown{
+        display: block
+    }
+
+    .btn-choose{
+        white-space: nowrap;
+        text-align: right;
+        padding: 5px;
+        color: white;
+    }
+
+    .btn-choose:active{  
+        background-color: #FEE056;
+    }
+
+    .hide-c{
+        display: none;
+    }
+
+    .player-leader{
+        display: block;
+        color: #FEE056;
+    }
+    .player-manage{
+        color: #FEE056;
+    }
+
 }   

@@ -17,33 +17,7 @@ import { Clubs } from '../../providers/classes/clubs';
 })
 export class Bd69ManagerClubPage {
   mClubs: Array<Clubs> = [];
-  list_club = [
-    {
-      id: 1,
-      name: "Chelsea",
-      logo: "",
-      time_create: "",
-      member: 10,
-    }, {
-      id: 2,
-      name: "Arsenal",
-      logo: "",
-      time_create: "",
-      member: 8,
-    }, {
-      id: 3,
-      name: "Manchester United",
-      logo: "",
-      time_create: "",
-      member: 12,
-    }, {
-      id: 4,
-      name: "Liverpool",
-      logo: "",
-      time_create: "",
-      member: 11,
-    }
-  ]
+
 
   logo: string = "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/1200px-Reading_FC.svg.png";
 

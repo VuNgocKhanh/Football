@@ -15,20 +15,11 @@
 
 <ion-content class="content-fix">
   <div padding-left padding-right>
-    <list-club [clubs]="mClubs"></list-club>
+    <list-club [clubs]="mClubs" (clickClub)="onClickClub($event)"></list-club>
   </div>
-  <!-- <ion-row class="club-item" *ngFor="let club of list_club" (click)="onClickClub(club)" tappable>
-    <ion-col col-2>
-      <div class="club-logo" [ngStyle]="{'background-image':'url('+logo+')'}"></div>
-    </ion-col>
-    <ion-col col-7 class="a3-container">
-      <span class="a3-container-center color-white">{{club.name}}</span>
-    </ion-col>
-    <ion-col col-3 class="a3-container-center color-lightgray">{{club.member}}</ion-col>
-  </ion-row>
   <ion-fab bottom right>
     <button class="btn-create" ion-fab mini (click)="onCreateClub()" tappable>
       <ion-icon name="add"></ion-icon>
     </button>
-  </ion-fab> -->
+  </ion-fab>
 </ion-content>
