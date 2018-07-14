@@ -1,13 +1,22 @@
 <!-- Generated template for the CalendarComponent component -->
 <div>
   <div class="calendar-container">
+    <div class="month-name">
+      {{mCalendarMonth.getMonthString()}}, {{mCalendarMonth.getYearString()}}
+      <div class="arrow-left a1-absolute" (click)="changeMonth(-1)">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </div>
+      <div class="arrow-right a1-absolute" (click)="changeMonth(1)">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </div>
+    </div>
     <div class="day-of-week">
-      <div class="day black bold" *ngFor="let dayinweek of daysInWeek"><span>{{dayinweek}}</span></div>
+      <div class="day gray bold" *ngFor="let dayinweek of daysInWeek"><span>{{dayinweek}}</span></div>
     </div>
     <div class="day-of-month row">
-      <div class="day a1-relative" *ngFor="let dayinmonth of daysInMonth" [class.black]="dayinmonth.dd <= today.getDate()" (click)="selectDate(dayinmonth)" tappable>
+      <div class="day a1-relative" *ngFor="let dayinmonth of mCalendarMonth.dates" [class.selected]="dateSelected && dayinmonth.dd == dateSelected.dd" (click)="selectDate(dayinmonth)" tappable>
         <span *ngIf="dayinmonth.dd > -1">{{dayinmonth.dd}}</span>
-        <div class="circle a1-content-center" *ngIf="dayinmonth.dd == dateSelected.dd"></div>
+        <div class="circle a1-content-center" *ngIf="dateSelected && dayinmonth.dd == dateSelected.dd"></div>
       </div>
     </div>
   </div>

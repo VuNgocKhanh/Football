@@ -1,0 +1,13 @@
+page-tabs{
+    .tabbar{
+        background: #254355 !important;
+    }
+    .tab-button-icon{
+        color: map-get($map: $appColors, $key: secondary) !important;
+        opacity: .6;
+    }
+    .tab-button[aria-selected=true] .tab-button-icon{
+        opacity: 1;
+        color: white !important; 
+    }
+}

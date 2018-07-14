@@ -10,6 +10,13 @@ export class CalendarMonth {
     constructor() {
 
     }
+
+    getMonthString(): string{
+        return ((this.mm + 1 < 10) ? "0" : "") + (this.mm + 1);
+    }
+    getYearString(): string{
+        return this.yy + "";
+    }
     public _CloneFrom(other: CalendarMonth): void {
         if (other) {
             this.mm = other.mm;
@@ -46,6 +53,12 @@ export class CalendarMonth {
             date.yy = yy;
             date.mm = mm;
             date.dd = i;
+            this.addDate(date);
+        }
+
+        for(let i = this.dates.length; i < 42; i ++){
+            let date = new CalendarDate();
+
             this.addDate(date);
         }
     }

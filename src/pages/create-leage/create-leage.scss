@@ -1,44 +1,57 @@
 page-create-leage {
   $size: 100px;
-  .form-container {
-    padding: 1rem;
+  ion-content.content{
+    background: white;
   }
-  // .toolbar-background {
-  //   background: linear-gradient(45deg, #246A2E, #213623);
-  // }
-  
+  .list-devider-header{
+    background: #EAEAEA;
+    color: black;
+    padding: 16px 0 16px 16px;
+  }
+  .logo-t{
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .padding{
+    padding-left: 11px;
+    padding-right: 16px;
+  }
+  .form-container {
+    border-bottom: 1px dashed lightgray;
+  }
+  .form-container:last-child{
+    border: none;
+  }
+  .score-rule{
+    padding-left: 5px;
+    font-weight: bold;
+  }
+  .right{
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
   .logo {
     height: $size * 0.6;
     width: $size * 0.6;
     margin: 1rem auto;
   }
-  .item {
-    padding-left: 0;
-    font-size: 1.4rem;
-    .item-inner {
-      border-bottom: 1px dashed lightgray !important;
-      padding-right: 0 !important;
-      padding-left: 5px;
-    }
-  }
-  .form-title {
-    font-size: 1.4rem;
-    padding: 10px 5px 10px 5px;
-  }
-  ion-textarea {
-    border: 1px solid lightgray;
-    width: calc(100% - 10px);
-    margin: 0 auto;
-    padding-left: 10px;
-  }
+  
   .btn {
-    background: linear-gradient(45deg, #246A2E, #213623);
-    color: white;
+    background: map-get($map: $appColors, $key: yellow);
+    color: black;
     border-radius: 20px;
     min-width: 60%;
     margin: 1.6rem auto;
+    text-transform: unset;
+    font-size: 1.6rem;
+    box-shadow: none;
+    font-weight: 400;
     ion-icon {
       margin-left: .6rem;
+      font-size: .6em;
     }
   }
 }

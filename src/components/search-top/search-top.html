@@ -1,0 +1,15 @@
+<!-- Generated template for the SearchTopComponent component -->
+<div>
+  <ion-row align-items-center class="ms-container">
+    <ion-col col-1 class="btn a1-relative">
+      <ion-icon *ngIf="isHaveIconLeft" name="ios-arrow-round-back-outline"></ion-icon>
+    </ion-col>
+    <ion-col col-10>
+      <ion-input placeholder="Tìm kiếm" [disabled]="isDisabled"></ion-input>
+      <ion-icon name="search" class="icon-s a1-absolute"></ion-icon>
+    </ion-col>
+    <ion-col col-1 tappable class="btn right" (click)="onClickRight()">
+      <ion-icon *ngIf="isHaveIconRight" name="ios-add-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+</div>

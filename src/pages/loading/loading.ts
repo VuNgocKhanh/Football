@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 import { FbAccountKitController } from '../../providers/core/fb-accountkit/fb-accountkit';
+import { AppModuleProvider } from '../../providers/app-module/app-module';
+import { APPKEYS } from '../../providers/app-module/app-keys';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LoadingPage page.
  *
@@ -15,50 +17,42 @@ import { FbAccountKitController } from '../../providers/core/fb-accountkit/fb-ac
   templateUrl: 'loading.html',
 })
 export class LoadingPage {
-  phoneNumber : string = "";
+  phoneNumber: string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public storage : Storage,
     public loadingCtrl: LoadingController,
-    public modalController : ModalController
+    public modalController: ModalController,
+    public mAppModule: AppModuleProvider
   ) {
-
-    // let loading = this.loadingCtrl.create({
-    //   content: 'Please wait...'
-    // });  
-    // loading.present(); 
-    // setTimeout(() => {
-    //   loading.dismiss();
-    // }, 3000);
-    
-   this.navCtrl.push("InfoPage");
-
-    // Check data from storage
-    // this.storage.get("phone-number").then(data=>{
-    //   if(data){
-    //     this.navCtrl.setRoot("TabsPage", null,  {
-    //       animate : false
-    //     })
-    //   }else{
-    //     this.callAccKit();
-    //   }
-    // })
   }
 
 
-  callAccKit(){
-    FbAccountKitController._getIntance().register((data)=>{      
+  callAccKit() {
+    FbAccountKitController._getIntance().register((data) => {
       this.phoneNumber = data['phoneNumber'];
-      this.setPhoneNumberToStorage(this.phoneNumber);
-      this.navCtrl.push("InfoPage")
+      this.navCtrl.setRoot("InfoPage");
     });
   }
-  
-  setPhoneNumberToStorage(phoneNumber : any){
-    this.storage.set("phone-number", phoneNumber);
-  }
-  
-  ionViewDidLoad() {}
 
-  ionViewDidEnter(){}
+
+
+  ionViewDidLoad() { }
+
+  ionViewDidEnter() {
+    this.mAppModule.getStoreController().getDataFromStorage(APPKEYS.LOGIN_STATUS).then((res)=>{
+      if(res){
+        this.onLoginSuccess();
+      }else{
+        this.callAccKit();
+      }
+    }).catch((err)=>{
+      this.mAppModule.loginSucess().then(()=>{
+        this.onLoginSuccess();
+      })
+    })
+  }
+
+  onLoginSuccess(){
+    this.navCtrl.setRoot("TabsPage");
+  }
 
 }

@@ -1,14 +1,9 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Home</ion-title>
-    </ion-navbar>
+    <ion-toolbar>
+        <search-top [disabled]="true"></search-top>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-searchbar (ionInput)="getItems($event)" [showCancelButton]="shouldShowCancel"></ion-searchbar>
-    <ion-list>
-        <ion-item *ngFor="let item of items">
-            {{ item }}
-        </ion-item>
-    </ion-list>
+<ion-content >
+  
 </ion-content>

@@ -1,9 +1,8 @@
 <!-- Generated template for the FormInputComponent component -->
 <div>
-    <ion-row align-items-center>
+    <ion-row align-items-center class="fi-container">
         <ion-col col-3 class="a1-relative">
             <div class="form-name">{{name}}</div>
-
         </ion-col>
         <ion-col col-8>
             <ion-input [disabled]="disabled" #input [type]="type" (input)="onInput()" [placeholder]="placeholder" [(ngModel)]="value"></ion-input>

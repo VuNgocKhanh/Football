@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Leagues } from '../../providers/classes/league';
 
 /**
  * Generated class for the CreateLeagePage page.
@@ -14,13 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'create-leage.html',
 })
 export class CreateLeagePage {
-  name_leage = "";
+  newLeague: Leagues = new Leagues();
   start_date = "2018-07-09";
   end_date = "2018-07-09";
   arrayInput : Array<{name: string, placeholder: string, value: string, type: string}> = [
     {name: "Tên", placeholder: "Nhập tên đội bóng", value: "", type: "text"},
     {name: "Số đội", placeholder: "Số đội bóng", value: "", type: "number"},
-    {name: "Số người", placeholder: "Số người thi đấu trên sân", value: "", type: "number"},
+    {name: "Số người", placeholder: "Số người tối đa đăng kí", value: "", type: "number"},
+    {name: "Đội thắng", placeholder: "Số điểm cho đội thắng", value: "", type: "number"},
+    {name: "Đội hoà", placeholder: "Số điểm cho đội hoà", value: "", type: "number"},
+    {name: "Đội thua", placeholder: "Số điểm cho đội thua", value: "", type: "number"}
   ]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -35,5 +39,10 @@ export class CreateLeagePage {
 
   getValue(){
    
+  }
+
+  getChange($event){
+    console.log("Change date .. ",$event);
+    
   }
 }
