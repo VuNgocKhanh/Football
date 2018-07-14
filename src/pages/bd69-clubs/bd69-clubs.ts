@@ -88,7 +88,7 @@ export class Bd69ClubsPage {
     public navParams: NavParams) {
     if (this.navParams.get('data')) {
       this.mClub = this.navParams.get('data');
-      this.mClub.member = this.list.length;
+      // this.mClub.getNumberPlayer() = this.list.length;
       // this.mPlayers.concat(this.list);
       // console.log(this.mPlayers);
 

@@ -1,10 +1,10 @@
 import { ParamsKey } from "./paramkeys";
 
-export class League {
-    
-    private leagueID: number = -1;
+export class Dornor {
     
     private name: string = "";
+    
+    private description: string = "";
     
     private logo: string = "";
     
@@ -12,29 +12,27 @@ export class League {
     
     private state: number = 0;
     
-    private numberClub: number = 0;
+    private website: string = "";
     
-    private timeStart: number = 0;
+    private facebook: string = "";
     
-    private timeEnd: number = 0;
+    private youtube: string = "";
     
     private timeCreated: number = 0;
     
-    private ruleID: number = -1;
-    
-   constructor(){}
-    
+    constructor(){}
+
     public fromSFSobject(object: any) {
         if ((object == null)) {
             return;
         }
         
-        if (object.containsKey(ParamsKey.LEAGUE_ID)) {
-            this.setLeagueID(object.getInt(ParamsKey.LEAGUE_ID));
-        }
-        
         if (object.containsKey(ParamsKey.NAME)) {
             this.setName(object.getUtfString(ParamsKey.NAME));
+        }
+        
+        if (object.containsKey(ParamsKey.DESCRIPTION)) {
+            this.setDescription(object.getUtfString(ParamsKey.DESCRIPTION));
         }
         
         if (object.containsKey(ParamsKey.LOGO)) {
@@ -49,36 +47,24 @@ export class League {
             this.setState(object.getInt(ParamsKey.STATE));
         }
         
-        if (object.containsKey(ParamsKey.NUMBER_CLUB)) {
-            this.setNumberClub(object.getInt(ParamsKey.NUMBER_CLUB));
+        if (object.containsKey(ParamsKey.WEBSITE)) {
+            this.setWebsite(object.getUtfString(ParamsKey.WEBSITE));
         }
         
-        if (object.containsKey(ParamsKey.TIME_START)) {
-            this.setTimeStart(object.getLong(ParamsKey.TIME_START));
+        if (object.containsKey(ParamsKey.FACEBOOK)) {
+            this.setFacebook(object.getUtfString(ParamsKey.FACEBOOK));
         }
         
-        if (object.containsKey(ParamsKey.TIME_END)) {
-            this.setTimeEnd(object.getLong(ParamsKey.TIME_END));
+        if (object.containsKey(ParamsKey.YOUTUBE)) {
+            this.setYoutube(object.getUtfString(ParamsKey.YOUTUBE));
         }
         
         if (object.containsKey(ParamsKey.TIME_CREATED)) {
             this.setTimeCreated(object.getLong(ParamsKey.TIME_CREATED));
         }
         
-        if (object.containsKey(ParamsKey.RULE_ID)) {
-            this.setRuleID(object.getInt(ParamsKey.RULE_ID));
-        }
-        
     }
     
-    
-    public getLeagueID(): number {
-        return this.leagueID;
-    }
-    
-    public setLeagueID(leagueID: number) {
-        this.leagueID = this.leagueID;
-    }
     
     public getName(): string {
         return this.name;
@@ -86,6 +72,14 @@ export class League {
     
     public setName(name: string) {
         this.name = this.name;
+    }
+    
+    public getDescription(): string {
+        return this.description;
+    }
+    
+    public setDescription(description: string) {
+        this.description = this.description;
     }
     
     public getLogo(): string {
@@ -112,28 +106,28 @@ export class League {
         this.state = this.state;
     }
     
-    public getNumberClub(): number {
-        return this.numberClub;
+    public getWebsite(): string {
+        return this.website;
     }
     
-    public setNumberClub(numberClub: number) {
-        this.numberClub = this.numberClub;
+    public setWebsite(website: string) {
+        this.website = this.website;
     }
     
-    public getTimeStart(): number {
-        return this.timeStart;
+    public getFacebook(): string {
+        return this.facebook;
     }
     
-    public setTimeStart(timeStart: number) {
-        this.timeStart = this.timeStart;
+    public setFacebook(facebook: string) {
+        this.facebook = this.facebook;
     }
     
-    public getTimeEnd(): number {
-        return this.timeEnd;
+    public getYoutube(): string {
+        return this.youtube;
     }
     
-    public setTimeEnd(timeEnd: number) {
-        this.timeEnd = this.timeEnd;
+    public setYoutube(youtube: string) {
+        this.youtube = this.youtube;
     }
     
     public getTimeCreated(): number {
@@ -142,13 +136,5 @@ export class League {
     
     public setTimeCreated(timeCreated: number) {
         this.timeCreated = this.timeCreated;
-    }
-    
-    public getRuleID(): number {
-        return this.ruleID;
-    }
-    
-    public setRuleID(ruleID: number) {
-        this.ruleID = this.ruleID;
     }
 }
