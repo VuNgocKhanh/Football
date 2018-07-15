@@ -1,45 +1,15 @@
-<ion-header>
+<ion-header id="header">
 
-    <ion-toolbar>
-        <search-top [disabled]="true"></search-top>
-    </ion-toolbar>
+    <ion-navbar>
+
+        <ion-title>Users</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-    <!-- <div padding>
-        <ion-segment [(ngModel)]="info_user">
-            <ion-segment-button value="club">
-                Football Club
-            </ion-segment-button>
-            <ion-segment-button value="profile">
-                Profile
-            </ion-segment-button>
-        </ion-segment>
-    </div>
-
-    <div [ngSwitch]="info_user">
-        <ion-list *ngSwitchCase="'club'">
-            <ion-item (click)="onClickCreateClub()">
-                Tạo đội bóng
-            </ion-item>
-
-            <ion-item *ngFor="let club of mClubs">
-                <ion-avatar item-left>
-                    <img src="{{club.image}}" alt="">
-                </ion-avatar>
-                <b><h2>{{club.name}}</h2></b>
-                <h3>Số thành viên : </h3>
-
-            </ion-item>
-        </ion-list>
-
-        <div *ngSwitchCase="'profile'" id="profile">
-            <div id="avatar"></div>
-        </div>
-    </div> -->
     <div class="container">
         <div id="profile">
             <ion-item (click)="onClickGoToProfile()">
@@ -50,12 +20,42 @@
 
         <div id="clubs">
             <ion-list>
-                <ion-item *ngFor="let club of mClubs">
-                    <div item-left class="avatar" [ngStyle]="{'background-image' : 'url('+club.image+')'}">
+                <ion-item-group>
+                    <!-- List club manage -->
+                    <ion-item-divider color="light">Đang quản lí</ion-item-divider>
+                    <ion-item>
+                        <ion-icon name="add"></ion-icon>Tạo đội bóng
+                    </ion-item>
+                    <ion-item (click)="onClickGoToGroup()" *ngFor="let club of mRecentClub">
+                        <div item-left class="avatar-club" [ngStyle]="{'background-image' : 'url('+club.image+')'}">
+                            <img src="club.image" alt="">
+                        </div>
+                        <h2>{{club.name}}</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon ios="ios-more" md="md-more"></ion-icon>
+                        Xem thêm
+                    </ion-item>
 
-                    </div>
-                    <b><h2>{{club.name}}</h2></b>
-                </ion-item>
+
+                    <!-- List club join -->
+                    <ion-item-divider color="light">Đang tham gia</ion-item-divider>
+                    <ion-item (click)="onClickGoToGroup()" *ngFor="let club of mRecentClub">
+                        <div item-left class="avatar-club" [ngStyle]="{'background-image' : 'url('+club.image+')'}"></div>
+                        <h2>{{club.name}}</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon ios="ios-more" md="md-more"></ion-icon>
+                        Xem thêm
+                    </ion-item>
+
+                    <!-- Logout -->
+                    <ion-item-divider color="light"></ion-item-divider>
+                    <ion-item>
+                        <ion-icon name="return-left"></ion-icon>
+                        Đăng xuất
+                    </ion-item>
+                </ion-item-group>
             </ion-list>
         </div>
     </div>

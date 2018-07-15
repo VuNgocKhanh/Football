@@ -1,0 +1,22 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Chỉnh sửa</ion-title>
+        <ion-icon name="checkmark" right></ion-icon>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngFor="let form of formList">
+        <form-input [disabled]="false" [no-icon]="true" [placeholder]="form.placeholder" [name]="form.name"></form-input>
+    </div>
+
+</ion-content>

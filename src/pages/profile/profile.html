@@ -1,5 +1,29 @@
 <ion-content>
     <div id="header">
+        <ion-icon id="btn-back" name="arrow-round-back" tapable navPop></ion-icon>
         <div id="avatar"></div>
     </div>
+
+    <div id="info">
+        <div id="user_name" class="a3-container-center">Vu Ngoc Khanh</div>
+        <div class="a3-container a3-justify-center" id="edit" (click)="onClickEditProfile()">Chỉnh sửa</div>
+    </div>
+
+    <div id="info">
+        <ion-item-group *ngFor="let person of personInfoList">
+            <ion-item-divider color="light">{{person.name}}</ion-item-divider>
+            <ion-item>Địa chỉ: {{person.address}}</ion-item>
+            <ion-item>Số điện thoại: {{person.phoneNumber}}</ion-item>
+            <ion-item>Vị trí thi đấu: {{person.position}}</ion-item>
+        </ion-item-group>
+
+        <ion-item-group *ngFor="let stat of statInfoList">
+            <ion-item-divider color="light">{{stat.name}}</ion-item-divider>
+            <ion-item>Chiều cao: {{stat.height}} cm</ion-item>
+            <ion-item>Cân nặng: {{stat.weight}} kg</ion-item>
+        </ion-item-group>
+
+
+    </div>
+
 </ion-content>

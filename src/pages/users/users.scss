@@ -5,15 +5,23 @@ page-users {
     .toolbar-title {
         color: white;
     }
+    .container {
+        // background: white;
+    }
     ion-content {
-        background: linear-gradient(to bottom, #254355, #102836);
+        // background: linear-gradient(to bottom, #254355, #102836);
+        // background: white;
     }
     h2 {
-        color: white
+        // color: white
+    }
+    .scroll-content {
+        padding: 0 !important;
+        background: white;
     }
     .item {
-        background: none;
-        padding-left: 0;
+        // background: none;
+        // padding-left: 0;
     }
     .avatar {
         background: url("../assets/imgs/avatar-default.jpg");
@@ -23,21 +31,34 @@ page-users {
         background-position: 50% 50%;
         background-size: cover;
     }
+    .avatar-club {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
     .item-inner {
-        border: none !important;
+        // border: none !important;
+        // color: white
     }
     #profile {
         border-bottom: 1px solid gray;
     }
     .item-block:last-child,
     {
-        border-bottom: none;
+        // border-bottom: none;
     }
     .item-wrapper:last-child {
-        border-bottom: none;
+        // border-bottom: none;
     }
     #clubs {
         overflow: auto;
-        height: 800px;
+        // height: 800px;
+        color: white;
+    }
+    ion-icon {
+        padding-right: 20px;
+        padding-left: 10px;
     }
 }

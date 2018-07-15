@@ -1,18 +1,31 @@
 <ion-content padding>
+    <!-- <div class="container">
+        <div id="backdrop" (click)="onClickDismiss()"></div>
+        <ion-card class="info-container">
+            <form-input *ngFor="let item of items" [name]="item.name" [placeholder]="item.placeholder" [disabled]="false" [no-icon]="true" (onInput)="getInfo($event, item)"></form-input>
+        </ion-card>
+    </div> -->
+    <div class="container">
+        <div id="content">
+            <div id="avatar">
 
-  <div class="container">
-    <div class="a3-container a3-justify-center">
-      <div class="background-image circle avatar">
-        <div class="a3-container-center a1-absolute change-avatar">
-          <ion-icon id="camera" name="camera"></ion-icon>
+                <div id="change-avatar">
+                    <ion-icon id="camera" name="camera"></ion-icon>
+                </div>
+            </div>
         </div>
-      </div>
+
+
+        <div>
+            <ion-input type="text" id="input" placeholder="Nhập tên" (ionChange)="getInfo($event)"></ion-input>
+        </div>
+
+        <div id="done">
+            <button ion-button id="btn-done" (click)="onClickGetData()">Hoàn thành</button>
+        </div>
+
     </div>
-    <div>
-      <ion-input type="text" id="input" placeholder="Nhập tên" (ionChange)="getInfo($event)"></ion-input>
-    </div>
-    <div id="done">
-      <button ion-button id="btn-done" [disabled]="!name_user && name_user.length == 0" (click)="onClickGetData()">Hoàn thành</button>
-    </div>
-  </div>
+
+
+
 </ion-content>

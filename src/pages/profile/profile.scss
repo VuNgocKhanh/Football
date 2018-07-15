@@ -16,4 +16,25 @@ page-profile {
         background-position: 100% 100%;
         background-size: cover;
     }
+    .scroll-content {
+        background: white;
+    }
+    #user_name {
+        margin-top: 20%;
+        font-size: 2em;
+    }
+    #info {
+        margin-top: 10%;
+        // background-color: #f3f0e1;
+    }
+    #btn-back {
+        color: white;
+        font-size: 3em;
+        padding-left: 20px;
+    }
+    #edit {
+        padding-top: 10px;
+        font-size: 1.2em;
+        color: blue;
+    }
 }

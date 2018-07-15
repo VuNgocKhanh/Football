@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -11,11 +12,9 @@ import { NavController, IonicPage } from 'ionic-angular';
 export class HomePage {
   searchQuery: string = '';
   items : Array<any> = ["Arsenal", "Manchester United" , "Chelsea", "Real Madrid", "Barcelona", "Bayern Munich"];
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public storage: Storage) {
   }
 
-  
-  
   getItems(ev: any) {
     const val = ev.target.value;
     
